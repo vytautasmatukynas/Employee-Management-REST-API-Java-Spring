@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>employee-management-api-spring-inMemoryBasicAuth</artifactId>
+	<artifactId>employee-management-api-spring</artifactId>
 	<version>1.0</version>
 	<name>employee-management-api-spring-inMemoryBasicAuth</name>
 	<description>employee-management-api-spring-inMemoryBasicAuth</description>
