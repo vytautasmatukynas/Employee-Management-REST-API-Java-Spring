@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>employee-management-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>employee-management-api</name>
-	<description>employee-management-api</description>
+	<artifactId>employee-management-api-spring-inMemoryBasicAuth</artifactId>
+	<version>1.0</version>
+	<name>employee-management-api-spring-inMemoryBasicAuth</name>
+	<description>employee-management-api-spring-inMemoryBasicAuth</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -47,7 +47,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
