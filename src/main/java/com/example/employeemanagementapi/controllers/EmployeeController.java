@@ -22,19 +22,26 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Employee> getAllEmployees(@PathVariable Long id) {
+    public ResponseEntity<Employee> getEmployee(@PathVariable Long id) {
         return ResponseEntity.ok(appService.getEmployeeById(id));
+    }
+
+    @GetMapping("/search/{searchParam}")
+    public ResponseEntity<List<Employee>> searchEmployees(@PathVariable String searchParam) {
+        return ResponseEntity.ok(appService.findEmployee(searchParam));
     }
 
     @PostMapping("/add")
     public ResponseEntity<Employee> addNewEmployee(@RequestBody Employee employee) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(appService.addEmployee(employee));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(appService.addEmployee(employee));
     }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
                                                    @RequestBody Employee employee) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(appService.updateEmployee(id, employee));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(appService.updateEmployee(id, employee));
     }
 
     @PutMapping("/delete/{id}")
