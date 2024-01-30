@@ -43,7 +43,8 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(config ->
                         config.requestMatchers("/login").permitAll()
-                                .anyRequest().authenticated()
+                                .anyRequest()
+                                .authenticated()
                 )
                 .formLogin(Customizer.withDefaults())
                 .logout(customize -> customize
