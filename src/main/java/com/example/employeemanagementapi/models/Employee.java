@@ -71,7 +71,7 @@ public class Employee {
     @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "2024-01-31")
     private String updateDate;
 
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "false")
+    @Schema(example = "false")
     private boolean isDeleted = false;
 
 }
