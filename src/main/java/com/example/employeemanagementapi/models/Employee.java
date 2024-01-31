@@ -26,6 +26,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     @Column(unique = true)
     private Long employeeId;
 
@@ -62,7 +63,7 @@ public class Employee {
     private String updateDate;
 
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    private boolean isDeleted = false;
+    private boolean isDeleted;
 
 }
 
