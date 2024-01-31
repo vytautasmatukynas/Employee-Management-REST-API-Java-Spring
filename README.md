@@ -1,6 +1,6 @@
 ### Employee Management REST API
 
-This is simple back-end API for `Employee Management Application`.
+Simple back-end API for `Employee Management Application`.
 Can find front-end at this repository: [JS-REACT]()
 
 API has all CRUD operations:
