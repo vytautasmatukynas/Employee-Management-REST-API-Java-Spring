@@ -70,15 +70,10 @@ public class AppServiceImpl implements AppService{
     public String deleteEmployee(Long id) {
         Employee employee = getEmployeeById(id);
 
-        if (employee.isDeleted()) {
-            employee.setDeleted(false);
-            return String.format("Employee \"%s: %s %s\" was restored",
-                    employee.getEmployeeId(), employee.getFirstName(), employee.getLastName());
-        } else {
-            employee.setDeleted(true);
-            return String.format("Employee \"%s: %s %s\" was deleted",
-                    employee.getEmployeeId(), employee.getFirstName(), employee.getLastName());
-        }
+        employee.setDeleted(true);
+        return String.format("Employee \"%s: %s %s\" was deleted",
+                employee.getEmployeeId(), employee.getFirstName(), employee.getLastName());
+
     }
 
     private String generateCurrentDate () {
