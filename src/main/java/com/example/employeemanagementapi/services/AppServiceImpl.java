@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Implementation of the {@link AppService} interface for managing Employee entities.
+ * This service provides methods to perform CRUD operations on Employee resources.
+ */
 @Service
 @Transactional
 @RequiredArgsConstructor

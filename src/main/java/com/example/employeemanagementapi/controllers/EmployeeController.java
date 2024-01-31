@@ -2,13 +2,20 @@ package com.example.employeemanagementapi.controllers;
 
 import com.example.employeemanagementapi.models.Employee;
 import com.example.employeemanagementapi.services.AppService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller class for managing Employee entities.
+ * This class provides RESTful endpoints to perform CRUD operations on Employee resources.
+ */
+@Validated
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -32,14 +39,14 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Employee> addNewEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<Employee> addNewEmployee(@Valid @RequestBody Employee employee) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(appService.addEmployee(employee));
     }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
-                                                   @RequestBody Employee employee) {
+                                                   @Valid @RequestBody Employee employee) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(appService.updateEmployee(id, employee));
     }

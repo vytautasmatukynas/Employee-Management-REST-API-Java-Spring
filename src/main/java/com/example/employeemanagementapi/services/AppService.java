@@ -4,6 +4,10 @@ import com.example.employeemanagementapi.models.Employee;
 
 import java.util.List;
 
+/**
+ * Service interface for managing Employee entities.
+ * This interface defines methods for performing CRUD operations on Employee resources.
+ */
 public interface AppService {
 
     List<Employee> getAllEmployees();

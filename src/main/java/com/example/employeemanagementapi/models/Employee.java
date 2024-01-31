@@ -4,10 +4,15 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Model class representing an Employee entity.
+ * This class defines the attributes and constraints for an employee record.
+ */
 @Entity
 @Data
 @AllArgsConstructor
@@ -22,33 +27,33 @@ public class Employee {
     @Column(unique = true)
     private Long employeeId;
 
-    @NotBlank
+    @NotBlank(message = "First name cannot be blank")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "Last name cannot be blank")
     private String lastName;
 
-    @NotBlank
+    @NotBlank(message = "Phone number cannot be blank")
     private String phoneNumber;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Invalid email format")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Address cannot be blank")
     private String address;
 
-    @NotBlank
+    @NotBlank(message = "Position cannot be blank")
     private String position;
 
-    @NotBlank
+    @NotBlank(message = "Department cannot be blank")
     private String department;
 
-    @NotBlank
+    @NotBlank(message = "Job start day cannot be blank")
     private String jobStartDay;
 
-    @NotBlank
-    @Min(value = 0)
+    @NotNull(message = "Salary cannot be null")
+    @Min(value = 0, message = "Salary must be greater than or equal to 0")
     private Double salary;
 
     private String updateDate;
@@ -56,3 +61,4 @@ public class Employee {
     private boolean isDeleted = false;
 
 }
+
