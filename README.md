@@ -12,7 +12,6 @@ API has all CRUD operations:
 5. Update Employee.
 6. Delete Employee.
 
-![img_1.png](readmeImg/img_1.png)
-
 ![img.png](readmeImg/img.png)
 
+![img_1.png](readmeImg/img_1.png)
