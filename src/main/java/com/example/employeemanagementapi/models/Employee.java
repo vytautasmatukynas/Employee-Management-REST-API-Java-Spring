@@ -63,7 +63,7 @@ public class Employee {
     private String updateDate;
 
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    private boolean isDeleted;
+    private boolean isDeleted = false;
 
 }
 

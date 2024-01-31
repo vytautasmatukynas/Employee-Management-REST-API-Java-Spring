@@ -46,7 +46,6 @@ public class AppServiceImpl implements AppService{
     public Employee addEmployee(Employee employee) {
         employee.setEmployeeId(generateEmployeeId());
         employee.setUpdateDate(generateCurrentDate());
-        employee.setDeleted(false);
 
         return appRepository.save(employee);
     }
