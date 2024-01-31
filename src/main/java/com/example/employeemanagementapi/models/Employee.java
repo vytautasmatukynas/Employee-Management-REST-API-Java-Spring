@@ -21,48 +21,57 @@ import lombok.NoArgsConstructor;
 @Table(name = "employees")
 public class Employee {
 
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "1001")
     @Column(unique = true)
     private Long employeeId;
 
     @NotBlank(message = "First name cannot be blank")
+    @Schema(example = "John")
     private String firstName;
 
     @NotBlank(message = "Last name cannot be blank")
+    @Schema(example = "Doe")
     private String lastName;
 
     @NotBlank(message = "Phone number cannot be blank")
+    @Schema(example = "123-456-7890")
     private String phoneNumber;
 
     @NotBlank(message = "Email cannot be blank")
     @Email(message = "Invalid email format")
+    @Schema(example = "john.doe@example.com")
     private String email;
 
     @NotBlank(message = "Address cannot be blank")
+    @Schema(example = "123 Main St, City")
     private String address;
 
     @NotBlank(message = "Position cannot be blank")
+    @Schema(example = "Software Engineer")
     private String position;
 
     @NotBlank(message = "Department cannot be blank")
+    @Schema(example = "Engineering")
     private String department;
 
     @NotBlank(message = "Job start day cannot be blank")
+    @Schema(example = "2024-01-31")
     private String jobStartDay;
 
     @NotNull(message = "Salary cannot be null")
     @Min(value = 0, message = "Salary must be greater than or equal to 0")
+    @Schema(example = "50000.0")
     private Double salary;
 
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "2024-01-31")
     private String updateDate;
 
-    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "false")
     private boolean isDeleted = false;
 
 }
