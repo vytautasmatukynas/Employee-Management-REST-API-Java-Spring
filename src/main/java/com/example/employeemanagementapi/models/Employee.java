@@ -1,5 +1,6 @@
 package com.example.employeemanagementapi.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -20,6 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "employees")
 public class Employee {
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,8 +58,10 @@ public class Employee {
     @Min(value = 0, message = "Salary must be greater than or equal to 0")
     private Double salary;
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private String updateDate;
 
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private boolean isDeleted = false;
 
 }
