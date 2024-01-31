@@ -36,10 +36,8 @@ public class AppServiceImpl implements AppService{
 
     @Override
     public List<Employee> findEmployee(String searchParam) {
-        Long employeeId = Long.parseLong(searchParam);
-
-        return appRepository.findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCaseOrEmployeeId(
-                searchParam, searchParam, employeeId);
+        return appRepository.findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
+                searchParam, searchParam);
     }
 
     @Override

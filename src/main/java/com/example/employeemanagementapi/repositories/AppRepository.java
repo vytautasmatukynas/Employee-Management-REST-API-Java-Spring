@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface AppRepository extends JpaRepository<Employee, Long> {
 
-    List<Employee> findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCaseOrEmployeeId(
-            String name, String lastName, Long employeeId);
+    List<Employee> findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
+            String name, String lastName);
 
 }
