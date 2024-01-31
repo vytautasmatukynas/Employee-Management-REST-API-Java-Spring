@@ -84,7 +84,7 @@ public class Employee {
 
     @Schema(accessMode = Schema.AccessMode.READ_ONLY, example = "false")
     @Column(nullable = false)
-    private boolean isDeleted = false;
+    private boolean deleted = false;
 
     public Employee(String firstName,
                     String lastName,
