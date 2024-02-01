@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -36,8 +38,17 @@ public class AppServiceImpl implements AppService{
 
     @Override
     public List<Employee> findEmployee(String searchParam) {
-        return appRepository.findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
-                searchParam, searchParam);
+        String[] searchText = searchParam.trim().split(" ");
+
+        List<Employee> resultList = new ArrayList<>();
+
+        for (String word : searchText) {
+            List<Employee> employees = appRepository.findEmployeeByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(
+                    word, word).stream().filter(name -> !name.isDeleted()).toList();
+            resultList.addAll(employees);
+        }
+
+        return resultList;
     }
 
     @Override
