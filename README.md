@@ -2,7 +2,7 @@
 
 Simple back-end API for `Employee Management Application`.
 
-API has all CRUD operations:
+API has basic CRUD operations:
 1. Get Employees.
 2. Get Employee.
 3. Add Employee.
